@@ -13,6 +13,8 @@ public class RucksackAnalizer {
     }
 
     public static SplittedString splitStringInMid(String input) {
-        return new SplittedString("a","a");
+        String split1 = input.substring(0, input.length() / 2);
+        String split2 = input.substring(input.length() / 2);
+        return new SplittedString(split1,split2);
     }
 }

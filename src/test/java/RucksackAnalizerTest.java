@@ -15,7 +15,7 @@ class RucksackAnalizerTest {
     }
 
     @ParameterizedTest
-    @CsvSource(value = {"aa,a,a"})
+    @CsvSource(value = {"aa,a,a", "abcdef,abc,def"})
     void splitStringInMid(String input, String split1, String split2) {
         SplittedString result = RucksackAnalizer.splitStringInMid(input);
 
