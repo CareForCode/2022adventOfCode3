@@ -14,11 +14,12 @@ class RucksackAnalizerTest {
         assertThat(result).isEqualTo(expectedResult);
     }
 
-    @Test
-    void splitStringInMid() {
-        SplittedString result = RucksackAnalizer.splitStringInMid("aa");
+    @ParameterizedTest
+    @CsvSource(value = {"aa,a,a"})
+    void splitStringInMid(String input, String split1, String split2) {
+        SplittedString result = RucksackAnalizer.splitStringInMid(input);
 
-        assertThat(result.getString1()).isEqualTo("a");
-        assertThat(result.getString2()).isEqualTo("a");
+        assertThat(result.getString1()).isEqualTo(split1);
+        assertThat(result.getString2()).isEqualTo(split2);
     }
 }
