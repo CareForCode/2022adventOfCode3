@@ -36,7 +36,7 @@ class RucksackAnalizerTest {
     }
 
     @ParameterizedTest
-    @CsvSource(value = {"aa,1","vJrwpWtwJgWrhcsFMMfFFhFp,16"})
+    @CsvSource(value = {"aa,1","vJrwpWtwJgWrhcsFMMfFFhFp,16","jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL,38"})
     void getRucksackPriorityForDuplicatedItem(String input, int expectedPriority) {
         int priority = RucksackAnalizer.getRucksackPriorityForDuplicatedItem(input);
 
