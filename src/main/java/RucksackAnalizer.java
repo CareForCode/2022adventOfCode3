@@ -31,7 +31,7 @@ public class RucksackAnalizer {
         return getPriority(duplicate);
     }
 
-    public static char getBadgePriorityForThreeElfGroup(String input1, String input2, String input3) {
+    public static char getBadgeForThreeElfGroup(String input1, String input2, String input3) {
         for (char char1 : input1.toCharArray()) {
             for (char char2 : input2.toCharArray()) {
                 if (char1 == char2) {
