@@ -27,7 +27,7 @@ class RucksackAnalizerTest {
     }
 
     @ParameterizedTest
-    @CsvSource(value = {"a,1"})
+    @CsvSource(value = {"a,1","b,2","A,27"})
     void getPriority(char input, int expectedPriority) {
         int priority = RucksackAnalizer.getPriority(input);
 

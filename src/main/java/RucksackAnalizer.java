@@ -19,6 +19,9 @@ public class RucksackAnalizer {
     }
 
     public static int getPriority(char input) {
-        return 1;
+        if (Character.isLowerCase(input)) {
+            return input-96;
+        }
+        return input-38;
     }
 }
