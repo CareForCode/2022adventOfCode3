@@ -2,6 +2,10 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.in;
 
@@ -41,5 +45,25 @@ class RucksackAnalizerTest {
         int priority = RucksackAnalizer.getRucksackPriorityForDuplicatedItem(input);
 
         assertThat(priority).isEqualTo(expectedPriority);
+    }
+
+    @Test
+    void result1() {
+        BufferedReader reader;
+        int totalSum = 0;
+
+        try {
+            reader = new BufferedReader(new FileReader("src/test/resources/adventOfCode3Input.txt"));
+            String line = reader.readLine();
+            while (line != null) {
+                totalSum += RucksackAnalizer.getRucksackPriorityForDuplicatedItem(line);
+                // read next line
+                line = reader.readLine();
+            }
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        assertThat(totalSum).isEqualTo(7903);
     }
 }
