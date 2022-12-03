@@ -3,6 +3,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.in;
 
 class RucksackAnalizerTest {
 
@@ -34,10 +35,11 @@ class RucksackAnalizerTest {
         assertThat(priority).isEqualTo(expectedPriority);
     }
 
-    @Test
-    void getRucksackPriorityForDuplicatedItem() {
-        int priority = RucksackAnalizer.getRucksackPriorityForDuplicatedItem("aa");
+    @ParameterizedTest
+    @CsvSource(value = {"aa,1"})
+    void getRucksackPriorityForDuplicatedItem(String input, int expectedPriority) {
+        int priority = RucksackAnalizer.getRucksackPriorityForDuplicatedItem(input);
 
-        assertThat(priority).isEqualTo(1);
+        assertThat(priority).isEqualTo(expectedPriority);
     }
 }
