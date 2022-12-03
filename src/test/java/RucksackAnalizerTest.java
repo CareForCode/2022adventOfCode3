@@ -33,4 +33,11 @@ class RucksackAnalizerTest {
 
         assertThat(priority).isEqualTo(expectedPriority);
     }
+
+    @Test
+    void getRucksackPriorityForDuplicatedItem() {
+        int priority = RucksackAnalizer.getRucksackPriorityForDuplicatedItem("aa");
+
+        assertThat(priority).isEqualTo(1);
+    }
 }

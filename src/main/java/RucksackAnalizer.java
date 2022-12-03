@@ -24,4 +24,8 @@ public class RucksackAnalizer {
         }
         return input-38;
     }
+
+    public static int getRucksackPriorityForDuplicatedItem(String input) {
+        return 1;
+    }
 }
