@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class RucksackAnalizerTest {
 
     @ParameterizedTest
-    @CsvSource(value = {"a,a,a","d,d,d","de,d,d"})
+    @CsvSource(value = {"a,a,a","d,d,d","de,d,d", "ed,da,d"})
     void findDuplicate(String input1, String input2, char expectedResult) {
         char result = RucksackAnalizer.findDuplicate(input1, input2);
 
