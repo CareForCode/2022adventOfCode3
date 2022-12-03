@@ -25,4 +25,12 @@ class RucksackAnalizerTest {
         assertThat(result.getString1()).isEqualTo(split1);
         assertThat(result.getString2()).isEqualTo(split2);
     }
+
+    @ParameterizedTest
+    @CsvSource(value = {"a,1"})
+    void getPriority(char input, int expectedPriority) {
+        int priority = RucksackAnalizer.getPriority(input);
+
+        assertThat(priority).isEqualTo(expectedPriority);
+    }
 }

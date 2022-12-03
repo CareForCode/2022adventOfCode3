@@ -17,4 +17,8 @@ public class RucksackAnalizer {
         String split2 = input.substring(input.length() / 2);
         return new SplittedString(split1,split2);
     }
+
+    public static int getPriority(char input) {
+        return 1;
+    }
 }
