@@ -13,4 +13,12 @@ class RucksackAnalizerTest {
 
         assertThat(result).isEqualTo(expectedResult);
     }
+
+    @Test
+    void splitStringInMid() {
+        SplittedString result = RucksackAnalizer.splitStringInMid("aa");
+
+        assertThat(result.getString1()).isEqualTo("a");
+        assertThat(result.getString2()).isEqualTo("a");
+    }
 }

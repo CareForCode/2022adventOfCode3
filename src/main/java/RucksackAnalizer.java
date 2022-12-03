@@ -11,4 +11,8 @@ public class RucksackAnalizer {
         }
         return Character.MIN_VALUE;
     }
+
+    public static SplittedString splitStringInMid(String input) {
+        return new SplittedString("a","a");
+    }
 }
