@@ -8,8 +8,8 @@ class RucksackAnalizerTest {
 
     @ParameterizedTest
     @CsvSource(value = {"a,a,a","d,d,d","de,d,d"})
-    void findDuplicate(String input1, String input2, String expectedResult) {
-        String result = RucksackAnalizer.findDuplicate(input1, input2);
+    void findDuplicate(String input1, String input2, char expectedResult) {
+        char result = RucksackAnalizer.findDuplicate(input1, input2);
 
         assertThat(result).isEqualTo(expectedResult);
     }
