@@ -26,6 +26,8 @@ public class RucksackAnalizer {
     }
 
     public static int getRucksackPriorityForDuplicatedItem(String input) {
-        return 1;
+        SplittedString splittedString = splitStringInMid(input);
+        char duplicate = findDuplicate(splittedString.getString1(), splittedString.getString2());
+        return getPriority(duplicate);
     }
 }
