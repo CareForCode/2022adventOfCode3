@@ -30,4 +30,19 @@ public class RucksackAnalizer {
         char duplicate = findDuplicate(splittedString.getString1(), splittedString.getString2());
         return getPriority(duplicate);
     }
+
+    public static char getBadgePriorityForThreeElfGroup(String input1, String input2, String input3) {
+        for (char char1 : input1.toCharArray()) {
+            for (char char2 : input2.toCharArray()) {
+                if (char1 == char2) {
+                    for (char char3 : input3.toCharArray()) {
+                        if (char1 == char3) {
+                            return char1;
+                        }
+                    }
+                }
+            }
+        }
+        return Character.MIN_VALUE;
+    }
 }

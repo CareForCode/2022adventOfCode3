@@ -47,6 +47,14 @@ class RucksackAnalizerTest {
         assertThat(priority).isEqualTo(expectedPriority);
     }
 
+    @ParameterizedTest
+    @CsvSource(value = {"a,a,a,a","bac,dbe,lhb,b","vJrwpWtwJgWrhcsFMMfFFhFp,jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL,PmmdzqPrVvPwwTWBwg,r"})
+    void getBadgePriorityForThreeElfGroup(String input1, String input2, String input3, char expectedDuplicate) {
+        char result = RucksackAnalizer.getBadgePriorityForThreeElfGroup(input1, input2, input3);
+
+        assertThat(result).isEqualTo(expectedDuplicate);
+    }
+
     @Test
     void result1() {
         BufferedReader reader;
